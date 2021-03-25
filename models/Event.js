@@ -24,6 +24,9 @@ const eventSchema = new Schema({
   killerAge: Number,
   complaint: Number,
   condemned: Boolean,
+  nbOtherVictims: Number,
+  otherVictims: String,
+  description: String,
   courtDecision: [String],
   pressArticles: [String],
   commemoration: [String],
@@ -35,4 +38,4 @@ const eventSchema = new Schema({
 
 const Event = mongoose.model("Events", eventSchema);
 
-mondule.exports = Event;
+module.exports = Event;
