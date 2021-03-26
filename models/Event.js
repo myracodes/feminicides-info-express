@@ -11,7 +11,10 @@ const eventSchema = new Schema({
     type: String,
     required: true
   },
-  firstName: String,
+  firstName: {
+    type: String,
+    default: "Une femme"
+  },  
   lastName: String,
   age: {
     type: Number,
@@ -23,7 +26,7 @@ const eventSchema = new Schema({
   },
   killerAge: Number,
   complaint: Number,
-  condemned: Boolean,
+  condemned: Boolean, // finalement plutôt string, non ? en cours / oui : jugement prononcé / en attente etc
   nbOtherVictims: Number,
   otherVictims: String,
   description: String,
