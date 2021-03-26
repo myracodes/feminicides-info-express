@@ -16,7 +16,7 @@ const Events = require('../models/Event')
 router.get('/tableau-de-bord', (req, res, next) => {
     User.find()
     .then((users) => {
-        res.status(200).json(documents)
+        res.status(200).json(users)
     })
     .catch((err) => res.status(500).json(err))
 })
@@ -32,7 +32,7 @@ router.get('/tableau-de-bord/:adminId', (req, res, next) => {
 
 //Update admin info
 router.patch('/tableau-de-bord/:adminId', (req, res, next) => {
-    User.findByIdAndUpdate(req.params.adminId)
+    User.findByIdAndUpdate(req.params.adminId, req.body)
     .then((adminToUpdate) => {
         res.status(200).json(adminToUpdate);
     })

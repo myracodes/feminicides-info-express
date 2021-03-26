@@ -6,6 +6,7 @@ const Events = require('../models/Event')
 /*List of events*/
 router.get('/', (req, res, next) => {
     Events.find()
+    .populate("region")
     .then((events) => {
         res.status(200).json(events);
     })
@@ -15,6 +16,7 @@ router.get('/', (req, res, next) => {
 /*Get one event*/
 router.get('/:eventId', (req, res, next) => {
     Events.findById(req.params.eventId)
+    .populate("region")
     .then((event) => {
         res.status(200).json(event);
     })
