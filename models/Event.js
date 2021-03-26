@@ -7,10 +7,7 @@ const eventSchema = new Schema({
     type: Date,
     required: true
   },
-  city: {
-    type: String,
-    required: true
-  },
+  city: String,
   firstName: {
     type: String,
     default: "Une femme"
@@ -22,7 +19,7 @@ const eventSchema = new Schema({
   },
   relationship: {
     type: String,
-    enum: ["compagnon", "ex-compagnon"]
+    enum: ["compagnon", "ex-compagnon", "non renseigné"]
   },
   killerAge: Number,
   complaint: Number,
@@ -36,7 +33,8 @@ const eventSchema = new Schema({
   region: {
     type: Schema.Types.ObjectId,
     ref: "Regions"
-  }
+  },
+  completeProfile : Boolean
 });
 
 const Event = mongoose.model("Events", eventSchema);
