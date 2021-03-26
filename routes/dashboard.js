@@ -7,7 +7,7 @@ const Events = require("../models/Event");
 /*CRUD admin*/
 
 //List of admins
-router.get("/dashboard", (req, res, next) => {
+router.get("/dashboard/all-users", (req, res, next) => {
   User.find()
     .then((users) => {
       res.status(200).json(users);
@@ -17,6 +17,9 @@ router.get("/dashboard", (req, res, next) => {
 
 //One admin
 router.get("/dashboard/:adminId", (req, res, next) => {
+
+  console.log(req.params.adminId)
+
   User.findById(req.params.adminId)
     .then((user) => {
       res.status(200).json(user);
@@ -45,7 +48,7 @@ router.delete("/dashboard/:adminId", (req, res, next) => {
 /*Event CRUD*/
 
 //List of events
-router.get("/dashboard", (req, res, next) => {
+router.get("/dashboard/all-events", (req, res, next) => {
   Events.find()
     .populate("region")
     .then((users) => {
@@ -95,7 +98,7 @@ router.post("/dashboard", (req, res, next) => {
 /*REGIONS*/
 
 //List of regions
-router.get("/dashboard", (req, res, next) => {
+router.get("/dashboard/all-regions", (req, res, next) => {
   Region.find()
     .populate("events")
     .then((regions) => {

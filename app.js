@@ -53,7 +53,7 @@ app.use("/api/map", require('./routes/data.map')); //
 // 404 Middleware
 app.use((req, res, next) => {
   const err = new Error("Ressource not found.");
-  error.status = 404;
+  err.status = 404;
   next(err);
 });
 

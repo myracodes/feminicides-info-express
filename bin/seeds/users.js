@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("../../config/dbConnection");
+const { Mongoose } = require("mongoose");
 const User = require("../../models/User");
 
 const users = [
@@ -36,3 +37,5 @@ const users = [
 User.create(users)
 .then(createdUsers => console.log("Users created! ", createdUsers))
 .catch(error => console.log(error));
+
+mongoose.connection.close()

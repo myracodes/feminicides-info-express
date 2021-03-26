@@ -1,6 +1,6 @@
 require("dotenv").config();
 require("../../config/dbConnection");
-
+const mongoose = require("mongoose");
 
 
 const Region = require("../../models/Region");
@@ -168,3 +168,5 @@ Region.create(regionList)
   .catch((error) => {
     console.log(error);
   });
+
+  mongoose.connection.close()

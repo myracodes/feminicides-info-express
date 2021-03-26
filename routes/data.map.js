@@ -23,7 +23,7 @@ router.get('/:eventId', (req, res, next) => {
     .catch((err) => res.status(500).json(err))
 });
 
-/*List of events*/
+/*List of regions*/
 router.get('/', (req, res, next) => {
     Region.find()
     .populate('events')
@@ -32,5 +32,6 @@ router.get('/', (req, res, next) => {
     })
     .catch((err) => res.status(500).json(err));
 });
+
 
 module.exports = router;

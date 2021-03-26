@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("../../config/dbConnection");
+const mongoose = require("mongoose");
 
 const Events = require('../../models/Event')
 
@@ -223,3 +224,5 @@ Events.create(events)
     console.log(list)
 })
 .catch((err) => console.log(err));
+
+mongoose.connection.close()
