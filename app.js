@@ -45,6 +45,10 @@ app.use(function (req, res, next) {
 const authRouter = require("./routes/auth");
 
 app.use("/api/auth", authRouter);
+app.use("/api", require('./routes/homepage')); //page d'accueil route
+app.use("/api", require('./routes/dashboard')); //tableau de bord route
+app.use("/api/data", require('./routes/data')) //données pour graph route
+app.use("/api/map", require('./routes/map')) //carte route
 
 // 404 Middleware
 app.use((req, res, next) => {
