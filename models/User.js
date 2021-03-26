@@ -6,7 +6,7 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   firstName: String,
   lastName: String,
-  role: { type: String, enum: ["admin", "éditrice"] }
+  role: { type: String, enum: ["admin", "éditrice"], default: "éditrice" }
 });
 
 const User = mongoose.model("Users", userSchema);
