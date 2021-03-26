@@ -13,10 +13,10 @@ router.post("/signin", (req, res, next) => {
         return res.status(400).json({ message: "Invalid credentials" });
       }
 
-      // const isValidPassword = bcrypt.compareSync(password, userDocument.password);
-      // if (!isValidPassword) {
-      //   return res.status(400).json({ message: "Invalid password" });
-      // }
+      const isValidPassword = bcrypt.compareSync(password, userDocument.password);
+      if (!isValidPassword) {
+        return res.status(400).json({ message: "Invalid password" });
+      }
       
       req.session.currentUser = userDocument._id;
       res.redirect("/api/auth/isLoggedIn");
