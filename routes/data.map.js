@@ -26,6 +26,7 @@ router.get('/:eventId', (req, res, next) => {
 /*List of events*/
 router.get('/', (req, res, next) => {
     Region.find()
+    .populate('events')
     .then((region) => {
         res.status(200).json(region);
     })
