@@ -10,7 +10,7 @@ const Events = require("../models/Event");
 router.get("/dashboard", (req, res, next) => {
   User.find()
     .then((users) => {
-      res.status(200).json(documents);
+      res.status(200).json(users);
     })
     .catch((err) => res.status(500).json(err));
 });
