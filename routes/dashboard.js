@@ -29,7 +29,7 @@ router.get("/dashboard/:adminId", (req, res, next) => {
 
 //Update admin info
 router.patch("/dashboard/:adminId", (req, res, next) => {
-  User.findByIdAndUpdate(req.params.adminId)
+  User.findByIdAndUpdate(req.params.adminId, req.body, {new: true})
     .then((adminToUpdate) => {
       res.status(200).json(adminToUpdate);
     })
