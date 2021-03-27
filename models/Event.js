@@ -12,15 +12,16 @@ const eventSchema = new Schema({
     type: String,
     default: "Une femme"
   },
-  coordinates: [Number],
   lastName: String,
   age: {
     type: Number,
     required: true
   },
+  coordinates: [Number],
   relationship: {
     type: String,
-    enum: ["compagnon", "ex-compagnon", "non renseigné"]
+    enum: ["compagnon", "ex-compagnon", "non renseigné"],
+    // default: "non-renseigné"
   },
   killerAge: Number,
   complaint: Number,

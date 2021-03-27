@@ -4,14 +4,14 @@ const mongoose = require("mongoose");
 
 const Events = require('../../models/Event')
 
-const events = [
-  {
+const events = [{
     eventNumber: 1,
     date: "2021-01-03T00:00:00.000Z",
     city: "Mont-Dore (Nouvelle-Calédonie)",
     firstName: "Ashley",
     lastName: "",
     age: 16,
+    coordinates: [-22.26312626887685, 166.57026188296064],
     relationship: "compagnon",
     killerAge: 19,
     complaint: 0,
@@ -87,8 +87,7 @@ const events = [
     complaint: 0,
     condemned: true,
     nbOtherVictims: 1,
-    otherVictims:
-      "Teddy, 25 ans, qui pourrait être le nouveau compagnon de Rosa",
+    otherVictims: "Teddy, 25 ans, qui pourrait être le nouveau compagnon de Rosa",
     description: "",
     courtDecision: [""],
     pressArticles: [
@@ -220,9 +219,9 @@ const events = [
 ];
 
 Events.create(events)
-.then((list) => {
+  .then((list) => {
     console.log(list)
-})
-.catch((err) => console.log(err));
+  })
+  .catch((err) => console.log(err));
 
 mongoose.connection.close()
