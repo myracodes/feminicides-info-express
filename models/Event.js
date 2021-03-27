@@ -11,7 +11,8 @@ const eventSchema = new Schema({
   firstName: {
     type: String,
     default: "Une femme"
-  },  
+  },
+  coordinates: [Number],
   lastName: String,
   age: {
     type: Number,

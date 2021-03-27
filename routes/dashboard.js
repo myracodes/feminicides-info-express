@@ -3,6 +3,7 @@ let router = express.Router();
 const User = require("../models/User");
 const Region = require("../models/Region");
 const Events = require("../models/Event");
+const uploader = require('../config/cloudinary')
 
 /*CRUD admin*/
 
@@ -68,7 +69,7 @@ router.get("/dashboard/:eventId", (req, res, next) => {
 });
 
 //Update event info
-router.patch("/dashboard/:eventId", (req, res, next) => {
+router.patch("/dashboard/:eventId", uploader.single('picture'), (req, res, next) => {
   Events.findByIdAndUpdate(req.params.eventId)
     .populate("region")
     .then((eventToUpdate) => {
@@ -87,7 +88,7 @@ router.delete("/dashboard/:eventId", (req, res, next) => {
 });
 
 //Create new event
-router.post("/dashboard", (req, res, next) => {
+router.post("/dashboard", uploader.single('picture'), (req, res, next) => {
   Events.create(req.body)
     .then((newEvent) => {
       res.status(201).json(newEvent);
