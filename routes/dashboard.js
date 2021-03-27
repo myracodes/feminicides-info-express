@@ -3,6 +3,8 @@ let router = express.Router();
 const User = require("../models/User");
 const Region = require("../models/Region");
 const Events = require("../models/Event");
+const uploader = require('../config/cloudinary')
+let adminRights = require('../middlewares/adminRights')
 
 /*CRUD admin*/
 
@@ -37,7 +39,7 @@ router.patch("/dashboard/:adminId", (req, res, next) => {
 });
 
 //Delete admin info
-router.delete("/dashboard/:adminId", (req, res, next) => {
+router.delete("/dashboard/:adminId", adminRights, (req, res, next) => {
   User.findByIdAndDelete(req.params.adminId)
     .then((adminToDelete) => {
       res.status(200).json(adminToDelete);
@@ -68,7 +70,7 @@ router.get("/dashboard/:eventId", (req, res, next) => {
 });
 
 //Update event info
-router.patch("/dashboard/:eventId", (req, res, next) => {
+router.patch("/dashboard/:eventId", uploader.single('picture'), (req, res, next) => {
   Events.findByIdAndUpdate(req.params.eventId)
     .populate("region")
     .then((eventToUpdate) => {
@@ -87,7 +89,7 @@ router.delete("/dashboard/:eventId", (req, res, next) => {
 });
 
 //Create new event
-router.post("/dashboard", (req, res, next) => {
+router.post("/dashboard", uploader.single('picture'), (req, res, next) => {
   Events.create(req.body)
     .then((newEvent) => {
       res.status(201).json(newEvent);
