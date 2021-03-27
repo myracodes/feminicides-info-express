@@ -39,7 +39,7 @@ router.patch("/dashboard/:adminId", (req, res, next) => {
 });
 
 //Delete admin info
-router.delete("/dashboard/:adminId", (req, res, next) => {
+router.delete("/dashboard/:adminId", adminRights, (req, res, next) => {
   User.findByIdAndDelete(req.params.adminId)
     .then((adminToDelete) => {
       res.status(200).json(adminToDelete);
