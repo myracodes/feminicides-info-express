@@ -1,4 +1,5 @@
 module.exports = function adminRights(req, res, next) {
+  console.log(req.session.currentUser);
   if (req.session.currentUser.role !== "admin") {
     return res
       .status(401)

@@ -4,7 +4,7 @@ const Region = require('../models/Region')
 const Events = require('../models/Event')
 
 /*List of events*/
-router.get('/', (req, res, next) => {
+router.get('/list/all-events', (req, res, next) => {
     Events.find()
     .populate("region")
     .then((events) => {
@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 });
 
 /*Get one event*/
-router.get('/:eventId', (req, res, next) => {
+router.get('/detail/:eventId', (req, res, next) => {
     Events.findById(req.params.eventId)
     .populate("region")
     .then((event) => {
@@ -24,11 +24,11 @@ router.get('/:eventId', (req, res, next) => {
 });
 
 /*List of regions*/
-router.get('/', (req, res, next) => {
+router.get('/list/all-regions', (req, res, next) => {
     Region.find()
     .populate('events')
-    .then((region) => {
-        res.status(200).json(region);
+    .then((regions) => {
+        res.status(200).json(regions);
     })
     .catch((err) => res.status(500).json(err));
 });
