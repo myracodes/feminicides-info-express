@@ -169,4 +169,4 @@ Region.create(regionList)
     console.log(error);
   });
 
-  mongoose.connection.close()
+  // mongoose.connection.close()

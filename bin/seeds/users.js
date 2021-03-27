@@ -38,4 +38,4 @@ User.create(users)
 .then(createdUsers => console.log("Users created! ", createdUsers))
 .catch(error => console.log(error));
 
-mongoose.connection.close()
+//mongoose.connection.close()

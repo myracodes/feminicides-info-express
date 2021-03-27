@@ -11,7 +11,10 @@ const events = [{
     firstName: "Ashley",
     lastName: "",
     age: 16,
-    coordinates: [-22.26312626887685, 166.57026188296064],
+    coordinates: {
+      lng:166.57026188296064,
+      lat:-22.26312626887685
+    },
     relationship: "compagnon",
     killerAge: 19,
     complaint: 0,
@@ -34,7 +37,10 @@ const events = [{
     firstName: "Laura",
     lastName: "Tavares",
     age: 21,
-    coordinates: [48.4321496844861, 0.09002944610860664],
+    coordinates: {
+      lng:0.09002944610860664,
+      lat:48.4321496844861
+    },
     relationship: "ex-compagnon",
     killerAge: 21,
     complaint: 0,
@@ -59,7 +65,10 @@ const events = [{
     firstName: "Annie",
     lastName: "Rullier",
     age: 70,
-    coordinates: [46.3794172605931, 1.0011271083580295],
+    coordinates:{
+      lng:1.0011271083580295,
+      lat:46.3794172605931
+    },
     relationship: "compagnon",
     killerAge: 76,
     complaint: 0,
@@ -84,7 +93,10 @@ const events = [{
     firstName: "Rosa",
     lastName: "Reyes",
     age: 41,
-    coordinates: [18.10179201305977, -63.05578356711669],
+    coordinates: {
+      lng:-63.05578356711669,
+      lat:18.10179201305977
+    },
     relationship: "ex-compagnon",
     killerAge: 40,
     complaint: 0,
@@ -107,7 +119,10 @@ const events = [{
     firstName: "Isabelle",
     lastName: "",
     age: 27,
-    coordinates: [48.97902345914507, 1.9707160675381856],
+    coordinates: {
+      lng:1.9707160675381856,
+      lat:48.97902345914507
+    },
     relationship: "compagnon",
     killerAge: 28,
     complaint: 3,
@@ -233,4 +248,4 @@ Events.create(events)
   })
   .catch((err) => console.log(err));
 
-mongoose.connection.close()
+//mongoose.connection.close()

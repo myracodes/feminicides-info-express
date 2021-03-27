@@ -17,7 +17,10 @@ const eventSchema = new Schema({
     type: Number,
     required: true
   },
-  coordinates: [Number],
+  coordinates: {
+    lng:Number,
+    lat:Number
+  },
   relationship: {
     type: String,
     enum: ["compagnon", "ex-compagnon", "non renseigné"],
