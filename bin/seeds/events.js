@@ -2,7 +2,8 @@ require("dotenv").config();
 require("../../config/dbConnection");
 const mongoose = require("mongoose");
 
-const Events = require('../../models/Event')
+const Events = require('../../models/Event');
+const Regions = require('../../models/Region');
 
 const events = [{
     eventNumber: 1,
@@ -28,7 +29,7 @@ const events = [{
       "https://www.facebook.com/1254619207882437/posts/3976503899027274/",
     ],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd9"]
+    region: ""
   },
   {
     eventNumber: 2,
@@ -56,7 +57,7 @@ const events = [{
       "https://www.facebook.com/1254619207882437/posts/4013193792024951/",
     ],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd2"]
+    region: ""
   },
   {
     eventNumber: 3,
@@ -84,7 +85,7 @@ const events = [{
       "https://www.facebook.com/1254619207882437/posts/4031310603546603/",
     ],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd3"]
+    region: ""
   },
   {
     eventNumber: 4,
@@ -110,7 +111,7 @@ const events = [{
       "https://www.facebook.com/1254619207882437/posts/4043605308983799/",
     ],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecdc"]
+    region: ""
   },
   {
     eventNumber: 5,
@@ -138,7 +139,7 @@ const events = [{
       "https://www.facebook.com/1254619207882437/posts/4049461931731470/",
     ],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd0"]
+    region: ""
   },
   {
     eventNumber: 6,
@@ -161,7 +162,7 @@ const events = [{
     courtDecision: ["Placé en garde à vue pour HOMICIDE VOLONTAIRE SUR CONJOINT"],
     pressArticles: ["https://www.laprovence.com/actu/en-direct/6249811/seine-saint-denis-une-femme-tuee-a-larme-blanche-son-mari-arrete.html", "https://www.facebook.com/1254619207882437/posts/4049740768370253/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd0"]
+    region: ""
   },
   {
     eventNumber: 7,
@@ -184,7 +185,7 @@ const events = [{
     courtDecision: ["mis en examen pour HOMICIDE VOLONTAIRE #féminicide et violences habituelles par conjoint."],
     pressArticles: ["https://www.leparisien.fr/val-d-oise-95/val-d-oise-une-femme-de-73-ans-etranglee-par-son-mari-02-02-2021-8422764.php", "https://www.facebook.com/1254619207882437/posts/4062125107131819/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd0"]
+    region: ""
   },
   {
     eventNumber: 8,
@@ -208,7 +209,7 @@ const events = [{
     pressArticles: ["https://actu.fr/ile-de-france/la-celle-saint-cloud_78126/yvelines-deux-policiers-retrouves-morts-a-la-celle-saint-cloud-il-s-agirait-d-un-drame-extra-conjugal_39167269.html",
   "https://www.facebook.com/1254619207882437/posts/4062502700427393/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd0"]
+    region: ""
   },
   {
     eventNumber: 9,
@@ -231,7 +232,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.ouest-france.fr/normandie/cabourg-14390/normandie-une-femme-retrouvee-morte-dans-un-hotel-de-cabourg-ce-jeudi-matin-7142744", "https://www.facebook.com/1254619207882437/posts/4065921040085559/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd2"]
+    region: ""
   },
   {
     eventNumber: 10,
@@ -254,7 +255,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.nicematin.com/faits-divers/un-homme-tue-sa-compagne-a-coups-de-couteau-devant-ses-deux-enfants-a-frejus-641860", "https://www.facebook.com/1254619207882437/posts/4074229509254712/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd6"],
+    region: "",
   },
   {
     eventNumber: 11,
@@ -277,7 +278,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.lamontagne.fr/arfeuille-chatain-23700/actualites/une-enquete-ouverte-pour-homicide-apres-la-decouverte-de-trois-corps-a-arfeuille-chatain-creuse_13915973/", "https://www.facebook.com/feminicide/posts/4095026607175002"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd3"],
+    region: "",
   },
   {
     eventNumber: 12,
@@ -300,7 +301,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.sudouest.fr/gironde/bordeaux/bordeaux-une-femme-se-tue-apres-une-chute-du-quatrieme-etage-1340014.php", "https://www.facebook.com/1254619207882437/posts/4097862726891390/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd3"],
+    region: "",
   },
   {
     eventNumber: 13,
@@ -323,7 +324,7 @@ const events = [{
     courtDecision: ["Le septuagénaire a été interpellé sur place et placé en garde à vue pour homicide volontaire par conjoint #féminicide. Vendredi 19 février lors de son audition devant la juge des libertés et de la détention, le septuagénaire a nié les violences, précisant que \"c’est elle qui se les est fait en se cognant dans la porte\" 😡 il a été placé en détention et encourt la réclusion criminelle à perpétuité."],
     pressArticles: ["https://www.vosgesmatin.fr/faits-divers-justice/2021/02/17/charmes-un-septuagenaire-suspecte-du-meurtre-d-une-femme", "https://www.facebook.com/1254619207882437/posts/4100727519938244/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350eccc"],
+    region: "",
   },
   {
     eventNumber: 14,
@@ -346,7 +347,7 @@ const events = [{
     courtDecision: ["Selon le parquet de Toulouse, « l’hypothèse du meurtre suivi de suicide est privilégiée sous réserve bien entendu de tout élément ultérieur et des conclusions des autopsies »."],
     pressArticles: ["https://actu.fr/occitanie/sabonneres_31464/pres-de-toulouse-un-couple-retrouve-mort-a-son-domicile-leur-fille-de-12-ans-donne-l-alerte_39730262.html", "https://www.facebook.com/feminicide/posts/4119563304721332"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd4"],
+    region: "",
   },
   {
     eventNumber: 15,
@@ -369,7 +370,7 @@ const events = [{
     courtDecision: ["Le parquet confirme qu'une enquête pour homicide volontaire #féminicide est ouverte et indique également qu'une procédure de médiation avait mis en place en 2015 suite à des faits de violence du conjoint sur la victime."],
     pressArticles: ["https://www.lyonmag.com/article/113840/lyon-une-femme-de-27-ans-tuee-par-son-conjoint-a-coups-de-marteau", "https://www.facebook.com/1254619207882437/posts/4149486975062298/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecc7"],
+    region: "",
   },
   {
     eventNumber: 16,
@@ -392,7 +393,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.20minutes.fr/faits_divers/2993135-20210307-bassin-arcachon-corps-vie-deux-personnes-agees-decouverts-maison", "https://www.facebook.com/1254619207882437/posts/4155613077783021/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd3"],
+    region: "",
   },
   {
     eventNumber: 17,
@@ -415,7 +416,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.leparisien.fr/val-d-oise-95/adolescente-retrouvee-morte-noyee-a-argenteuil-une-histoire-de-jalousie-entre-filles-09-03-2021-8427813.php", "https://www.facebook.com/1254619207882437/posts/4160901687254160/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd3"],
+    region: "",
   },
   {
     eventNumber: 18,
@@ -438,7 +439,7 @@ const events = [{
     courtDecision: ["À l'issue de son audition le 12 mars 2021, il a été mis en examen pour meurtre sur conjoint, pour meurtre et placé en détention."],
     pressArticles: ["https://la1ere.francetvinfo.fr/reunion/saint-joseph/double-homicide-a-saint-joseph-un-homme-tue-sa-femme-et-sa-voisine-954715.html", "https://www.facebook.com/1254619207882437/posts/4162368587107470/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd7"],
+    region: "",
   },
   {
     eventNumber: 19,
@@ -461,7 +462,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://actu.fr/ile-de-france/champagne-sur-oise_95134/val-d-oise-une-femme-tuee-a-coups-de-couteau-a-champagne-sur-oise-son-mari-principal-suspect-a-tente-de-se-suicider_40167892.html", "https://www.facebook.com/feminicide/posts/4167984316545897"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd0"],
+    region: "",
   },
   {
     eventNumber: 20,
@@ -484,7 +485,7 @@ const events = [{
     courtDecision: ["Une enquête a été ouverte par le parquet pour des faits d'homicide par conjoint #féminicide L'homme a été placé en garde à vue et sera présenté à un juge d\'instruction. Une autopsie de la victime est également prévue en début de semaine."],
     pressArticles: ["https://www.leprogres.fr/amp/faits-divers-justice/2021/03/13/mably-une-femme-tuee-a-coups-de-couteau-son-compagnon-en-garde-a-vue", "https://www.facebook.com/feminicide/posts/4171024762908519"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecc7"],
+    region: "",
   },
   {
     eventNumber: 21,
@@ -507,7 +508,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.republicain-lorrain.fr/faits-divers-justice/2021/03/13/une-femme-retrouvee-sans-vie-a-son-domicile-le-compagnon-interpelle", "https://www.facebook.com/1254619207882437/posts/4171349796209349/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350eccc"],
+    region: "",
   },
   {
     eventNumber: 22,
@@ -530,7 +531,7 @@ const events = [{
     courtDecision: ["Le procureur de la République de Sarreguemines, Olivier Glady confirme qu'il s'agit « d'un féminicide (...) sur fond de séparation conjugale » suivi d'un suicide de l'auteur des faits."],
     pressArticles: ["https://www.francebleu.fr/infos/faits-divers-justice/l-homme-retranche-en-moselle-et-son-ex-compagne-retenue-en-otage-retrouves-morts-1615765907", "https://www.facebook.com/1254619207882437/posts/4175465852464410/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350eccc"],
+    region: "",
   },
   {
     eventNumber: 23,
@@ -553,7 +554,7 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://amp.ouest-france.fr/bretagne/rennes-35000/bretagne-le-corps-de-magali-blandin-retrouve-pres-de-rennes-7194435", "https://www.facebook.com/feminicide/posts/4193207437356918"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecc9"],
+    region: "",
   },
   {
     eventNumber: 24,
@@ -576,14 +577,25 @@ const events = [{
     courtDecision: [""],
     pressArticles: ["https://www.ladepeche.fr/2021/03/21/feminicide-un-homme-recherche-a-perpignan-apres-le-meurtre-de-son-ex-compagne-9441101.php", "https://www.facebook.com/1254619207882437/posts/4195166900494305/"],
     commemoration: [""],
-    region: ["60619bc5d87c0567e350ecd4"],
+    region: "",
   }
 ];
 
-Events.create(events)
+Regions.find()
+.then(regionsList => {
+  regionsList.forEach(regions => console.log("random id: ", regionsList[Math.floor(Math.random() * Math.floor(regionsList.length))]._id))
+  events.forEach(event => {
+    event.region = regionsList[Math.floor(Math.random() * Math.floor(regionsList.length))]._id;
+  });
+})
+.then( () => {
+  Events.create(events)
   .then((list) => {
     console.log(list)
   })
   .catch((err) => console.log(err));
 
-// mongoose.connection.close()
+})
+.catch(error => console.log(error));
+ 
+// // mongoose.connection.close()

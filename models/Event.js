@@ -42,7 +42,10 @@ const eventSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Regions",
   },
-  completeProfile: Boolean,
+  completeProfile: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const Event = mongoose.model("Events", eventSchema);
