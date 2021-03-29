@@ -31,8 +31,14 @@ const eventSchema = new Schema({
   },
   killerAge: Number,
   complaint: Number,
-  condemned: Boolean, // finalement plutôt string, non ? en cours / oui : jugement prononcé / en attente etc
-  nbOtherVictims: Number,
+  condemned: {
+    type: Boolean,
+    default: false
+  }, // finalement plutôt string, non ? en cours / oui : jugement prononcé / en attente etc
+  nbOtherVictims: {
+    type: Number,
+    default: 0
+  },
   otherVictims: String,
   description: String,
   courtDecision: [String],

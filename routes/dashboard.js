@@ -69,12 +69,14 @@ router.get("/dashboard/details-event/:eventId", (req, res, next) => {
 
 //Update event info
 router.patch("/dashboard/edit-event/:eventId", fileUploader.single('commemoration'), (req, res, next) => {
+  console.log("hello from the patch route before the findByIdAndUpdate");
   
   if (req.file && req.file.path) req.body.commemoration = req.file.path;
 
   Events.findByIdAndUpdate(req.params.eventId, req.body)
     .populate("region")
     .then((eventToUpdate) => {
+      console.log("event inside patch route: ", eventToUpdate);
       res.status(200).json(eventToUpdate);
     })
     .catch((err) => res.status(500).json(err));
@@ -91,8 +93,10 @@ router.delete("/dashboard/delete-event/:eventId", (req, res, next) => {
 
 //Create new event
 router.post("/dashboard/new-event", fileUploader.single('commemoration'), (req, res, next) => {
-
-  let commemorationLink = req.file.path;
+  console.log("req file: ", req.file);
+  let commemorationLink = "";
+  
+  if (req.file) commemorationLink = req.file.path;
 
   Events.create({commemoration : commemorationLink, ...req.body  })
     .then((newEvent) => {
