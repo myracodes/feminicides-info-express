@@ -3,8 +3,8 @@ let router = express.Router();
 const User = require("../models/User");
 const Region = require("../models/Region");
 const Events = require("../models/Event");
-const uploader = require('../config/cloudinary')
-let adminRights = require('../middlewares/adminRights')
+const fileUploader = require('../config/cloudinary')
+const adminRights = require('../middlewares/adminRights')
 
 /*CRUD admin*/
 
@@ -31,8 +31,6 @@ router.get("/dashboard/:adminId", (req, res, next) => {
 router.patch("/dashboard/:adminId", (req, res, next) => {
   User.findByIdAndUpdate(req.params.adminId, req.body)
     .then((adminToUpdate) => {
-      console.log(req.body)
-      console.log(adminToUpdate)
       res.status(200).json(adminToUpdate);
     })
     .catch((err) => res.status(500).json(err));
@@ -70,8 +68,11 @@ router.get("/dashboard/details-event/:eventId", (req, res, next) => {
 });
 
 //Update event info
-router.patch("/dashboard/edit-event/:eventId", uploader.single('picture'), (req, res, next) => {
-  Events.findByIdAndUpdate(req.params.eventId)
+router.patch("/dashboard/edit-event/:eventId", fileUploader.single('commemoration'), (req, res, next) => {
+  
+  if (req.file && req.file.path) req.body.commemoration = req.file.path;
+
+  Events.findByIdAndUpdate(req.params.eventId, req.body)
     .populate("region")
     .then((eventToUpdate) => {
       res.status(200).json(eventToUpdate);
@@ -89,8 +90,11 @@ router.delete("/dashboard/delete-event/:eventId", (req, res, next) => {
 });
 
 //Create new event
-router.post("/dashboard/new-event", uploader.single('picture'), (req, res, next) => {
-  Events.create(req.body)
+router.post("/dashboard/new-event", fileUploader.single('commemoration'), (req, res, next) => {
+
+  let commemorationLink = req.file.path;
+
+  Events.create({commemoration : commemorationLink, ...req.body  })
     .then((newEvent) => {
       res.status(201).json(newEvent);
     })
