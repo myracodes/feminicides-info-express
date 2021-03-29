@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Region = require('../models/Region')
-const Events = require('../models/Event')
+const Region = require('../models/Region');
+const Events = require('../models/Event');
 
 /*List of events*/
 router.get('/list/all-events', (req, res, next) => {
