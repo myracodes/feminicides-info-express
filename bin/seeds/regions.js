@@ -88,7 +88,7 @@ const regionList = [
     shelterPlaces: 0,
   },
   {
-    name: "Île-de-France",
+    name: "Ile-de-France",
     politicalParty: "String",
     regionVSSBudget: 0,
     events: [],

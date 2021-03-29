@@ -148,8 +148,8 @@ const events = [{
     lastName: "",
     age: 24,
     coordinates: {
-      lng: 48.94048843079504,
-      lat: 2.5328820397027756
+      lng: 2.5328820397027756,
+      lat: 48.94048843079504
     },
     relationship: "compagnon",
     killerAge: 28,
@@ -171,8 +171,8 @@ const events = [{
     lastName: "",
     age: 73,
     coordinates: {
-      lng: 48.951854992320555,
-      lat: 2.232156969314413
+      lng: 2.232156969314413,
+      lat: 48.951854992320555
     },
     relationship: "non renseigné",
     killerAge: 83,
@@ -194,8 +194,8 @@ const events = [{
     lastName: "B.",
     age: 29,
     coordinates: {
-      lng: 48.84707555157467, 
-      lat: 2.1362036551354127
+      lng: 2.1362036551354127, 
+      lat: 48.84707555157467
     },
     relationship: "non renseigné",
     killerAge: 31,
@@ -218,8 +218,8 @@ const events = [{
     lastName: "",
     age: 34,
     coordinates: {
-      lng: 49.28613007839378,
-      lat: -0.11826100226006457
+      lng: -0.11826100226006457,
+      lat: 49.28613007839378
     },
     relationship: "ex-compagnon",
     killerAge: 21,
@@ -241,8 +241,8 @@ const events = [{
     lastName: "",
     age: 43,
     coordinates: {
-      lng: 43.453396883326526, 
-      lat: 6.72601384903017
+      lng: 6.72601384903017, 
+      lat: 43.453396883326526
     },
     relationship: "compagnon",
     killerAge: 71,
@@ -264,8 +264,8 @@ const events = [{
     lastName: "",
     age: 61,
     coordinates: {
-      lng: 46.07047692761232,  
-      lat: 2.434850681275709
+      lng: 2.434850681275709,  
+      lat: 46.07047692761232
     },
     relationship: "compagnon",
     killerAge: 64,
@@ -287,10 +287,10 @@ const events = [{
     lastName: "",
     age: 31,
     coordinates: {
-      lng: 44.83693085531955, 
-      lat: -0.5679839461180656 
+      lng: -0.5679839461180656, 
+      lat:  44.83693085531955
     },
-    relationship: "compagnon supposé",
+    relationship: "compagnon",
     killerAge: 35,
     complaint: 0,
     // condemned: true,
@@ -310,8 +310,8 @@ const events = [{
     lastName: "Etienne",
     age: 47,
     coordinates: {
-      lng: 48.38266495650212, 
-      lat: 6.295945388868495
+      lng: 6.295945388868495, 
+      lat: 48.38266495650212
     },
     relationship: "compagnon",
     killerAge: 74,
@@ -333,8 +333,8 @@ const events = [{
     lastName: "",
     age: 46,
     coordinates: {
-      lng: 43.46706766153583, 
-      lat: 1.057905355376011
+      lng: 1.057905355376011, 
+      lat: 43.46706766153583
     },
     relationship: "compagnon",
     killerAge: 47,
@@ -356,8 +356,8 @@ const events = [{
     lastName: "",
     age: 30,
     coordinates: {
-      lng: 45.75793453639808, 
-      lat: 4.8734643709761905
+      lng: 4.8734643709761905, 
+      lat: 45.75793453639808
     },
     relationship: "ex-compagnon",
     killerAge: 32,
@@ -379,8 +379,8 @@ const events = [{
     lastName: "D.",
     age: 87,
     coordinates: {
-      lng: 44.63140764576726, 
-      lat: -1.0747517771720074
+      lng: -1.0747517771720074, 
+      lat: 44.63140764576726
     },
     relationship: "compagnon",
     killerAge: 80,
@@ -402,8 +402,8 @@ const events = [{
     lastName: "",
     age: 14,
     coordinates: {
-      lng: 48.9517422633757,  
-      lat: 2.2402250481120713
+      lng: 2.2402250481120713,  
+      lat: 48.9517422633757
     },
     relationship: "ex-compagnon",
     killerAge: 15,
@@ -425,8 +425,8 @@ const events = [{
     lastName: "",
     age: 78,
     coordinates: {
-      lng: -21.356181995430244,
-      lat: 55.607833533558484
+      lng: 55.607833533558484,
+      lat: -21.356181995430244
     },
     relationship: "compagnon",
     killerAge: 85,
@@ -448,8 +448,8 @@ const events = [{
     lastName: "",
     age: 23,
     coordinates: {
-      lng: 49.143086447536845, 
-      lat: 2.232137421281787
+      lng: 2.232137421281787, 
+      lat: 49.143086447536845
     },
     relationship: "compagnon",
     killerAge: 23,
@@ -471,8 +471,8 @@ const events = [{
     lastName: "Amar",
     age: 34,
     coordinates: {
-      lng: 46.090715282468764, 
-      lat: 4.065909682440045
+      lng: 4.065909682440045, 
+      lat: 46.090715282468764
     },
     relationship: "ex-compagnon",
     killerAge: 32,
@@ -494,8 +494,8 @@ const events = [{
     lastName: "",
     age: 51,
     coordinates: {
-      lng: 49.3155383679355, 
-      lat: 5.894975600043835
+      lng: 5.894975600043835, 
+      lat: 49.3155383679355
     },
     relationship: "ex-compagnon",
     killerAge: 54,
@@ -517,8 +517,8 @@ const events = [{
     lastName: "",
     age: 45,
     coordinates: {
-      lng: 49.07891316208137, 
-      lat: 6.685497184585262
+      lng: 6.685497184585262, 
+      lat: 49.07891316208137
     },
     relationship: "ex-compagnon",
     killerAge: 58,
@@ -540,8 +540,8 @@ const events = [{
     lastName: "Blandin",
     age: 42,
     coordinates: {
-      lng: 48.13032336615626, 
-      lat: -1.958416572131148
+      lng: -1.958416572131148, 
+      lat: 48.13032336615626
     },
     relationship: "ex-compagnon",
     killerAge: 45,
@@ -563,8 +563,8 @@ const events = [{
     lastName: "",
     age: 55,
     coordinates: {
-      lng: 42.68653877464594, 
-      lat: 2.9089627224715784
+      lng: 2.9089627224715784, 
+      lat: 42.68653877464594
     },
     relationship: "ex-compagnon",
     killerAge: 55,
@@ -586,4 +586,4 @@ Events.create(events)
   })
   .catch((err) => console.log(err));
 
-//mongoose.connection.close()
+// mongoose.connection.close()
