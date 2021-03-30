@@ -55,7 +55,7 @@ const eventSchema = new Schema({
   pressArticles: [String],
   commemoration: {
     type: String,
-    default: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/153803050_238212984635355_1749325389102366591_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=6e_9wCcYq88AX-hdOOp&_nc_ht=scontent-cdt1-1.xx&oh=398bf02a6d314d6a630f34e4cfe5e8f0&oe=6088FB8B",
+    default: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/134188995_201395188317135_7367171530112152291_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=1dUd6ZdF9bIAX9n59OY&_nc_ht=scontent-cdt1-1.xx&oh=2504fa9e947ca7a174da7a84bb325d93&oe=60899739",
   },
   imageSource: String,
   region: {
