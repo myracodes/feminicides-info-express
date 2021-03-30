@@ -1,9 +1,9 @@
 require("dotenv").config();
-require("./config/dbConnection");
+require("../../config/dbConnection");
 const mongoose = require("mongoose");
 
-const Events = require('./models/Event');
-const Regions = require('./models/Region');
+const Events = require('../../models/Event');
+const Regions = require('../../models/Region');
 
 const events = [{
     eventNumber: 1,
