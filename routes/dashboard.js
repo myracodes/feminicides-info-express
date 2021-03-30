@@ -115,7 +115,15 @@ router.post("/dashboard/new-event", fileUploader.single('commemoration'), (req, 
 
   Events.create({commemoration : commemorationLink, ...req.body  })
     .then((newEvent) => {
-      res.status(201).json(newEvent);
+      // console.log("event region: ", newEvent.region);
+      // console.log("event ID: ", newEvent._id);
+      Region.findByIdAndUpdate(newEvent.region, { $push: { events: newEvent._id }})
+      .then(editedRegion => {
+        // console.log("Event added to the region ", editedRegion);
+        res.status(201).json(newEvent);
+      })
+      .catch(error => console.log(error));
+
     })
     .catch((err) => res.status(500).json(err));
 });
