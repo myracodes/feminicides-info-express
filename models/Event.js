@@ -23,23 +23,28 @@ const eventSchema = new Schema({
   coordinates: {
     lng: Number,
     lat: Number,
+    required: true
   },
   relationship: {
     type: String,
     enum: ["compagnon", "ex-compagnon", "compagnon supposé", "non renseigné"],
-    // default: "non-renseigné"
+    default: "non-renseigné"
   },
   killerAge: Number,
   complaint: Number,
   condemned: {
-    type: Boolean,
-    default: false
-  }, // finalement plutôt string, non ? en cours / oui : jugement prononcé / en attente etc
+    type: String,
+    enum: ["condamné", "non condamné", "en cours", "non renseigné"],
+    default: "non renseigné"
+  },
   nbOtherVictims: {
     type: Number,
     default: 0
   },
-  otherVictims: String,
+  otherVictims: {
+    type: String,
+    default: "non renseigné"
+  },
   description: String,
   courtDecision: [String],
   pressArticles: [String],

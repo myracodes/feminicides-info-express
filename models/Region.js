@@ -6,7 +6,10 @@ const regionSchema = new Schema({
     type: String,
     required: true
   },
-  politicalParty: String,
+  politicalParty: {
+    type: String,
+    required: true
+  },
   regionVSSBudget: Number,
   events: [{
     type: Schema.Types.ObjectId,
