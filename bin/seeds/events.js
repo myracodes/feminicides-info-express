@@ -246,7 +246,7 @@ const events = [{
     relationship: "compagnon",
     killerAge: 71,
     complaint: 2,
-    condemned: "condamné",
+    condemned: "en cours",
     nbOtherVictims: 0,
     otherVictims: "",
     description: "Iraida a été mortellement poignardée par son compagnon, à leur domicile, devant leurs enfants (9 ans et 14 ans). Le compagnon, qui a tenté de s'enfuir, a été empêché par des voisins. Interpellé sur place par les forces de l'ordre, il a été placé en garde à vue pour homicide volontaire sur conjoint.",
