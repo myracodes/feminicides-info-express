@@ -8,7 +8,7 @@ const Region = require("../../models/Region");
 const regionList = [
   {
     name: "Auvergne-Rhône-Alpes",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -17,7 +17,7 @@ const regionList = [
   },
   {
     name: "Bourgogne-Franche-Comté",
-    politicalParty: "String",
+    politicalParty: "Parti socialiste",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -26,7 +26,7 @@ const regionList = [
   },
   {
     name: "Bretagne",
-    politicalParty: "String",
+    politicalParty: "Parti socialiste",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -35,7 +35,7 @@ const regionList = [
   },
   {
     name: "Centre-Val de Loire",
-    politicalParty: "String",
+    politicalParty: "Parti socialiste",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -44,7 +44,7 @@ const regionList = [
   },
   {
     name: "Corse",
-    politicalParty: "String",
+    politicalParty: "Corsica libera",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -53,7 +53,7 @@ const regionList = [
   },
   {
     name: "Grand Est",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -62,7 +62,7 @@ const regionList = [
   },
   {
     name: "Guadeloupe",
-    politicalParty: "String",
+    politicalParty: "Changez d'Avenir",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -71,7 +71,7 @@ const regionList = [
   },
   {
     name: "Guyane",
-    politicalParty: "String",
+    politicalParty: "Divers droite",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -80,7 +80,7 @@ const regionList = [
   },
   {
     name: "Hauts-de-France",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -89,7 +89,7 @@ const regionList = [
   },
   {
     name: "Ile-de-France",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -98,7 +98,7 @@ const regionList = [
   },
   {
     name: "Martinique",
-    politicalParty: "String",
+    politicalParty: "Divers droite",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -107,7 +107,7 @@ const regionList = [
   },
   {
     name: "Normandie",
-    politicalParty: "String",
+    politicalParty: "les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -116,7 +116,7 @@ const regionList = [
   },
   {
     name: "Nouvelle-Aquitaine",
-    politicalParty: "String",
+    politicalParty: "Parti socialiste",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -125,7 +125,7 @@ const regionList = [
   },
   {
     name: "Occitanie",
-    politicalParty: "String",
+    politicalParty: "Divers gauche",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -134,7 +134,7 @@ const regionList = [
   },
   {
     name: "Pays de la Loire",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -143,7 +143,7 @@ const regionList = [
   },
   {
     name: "Provence-Alpes-Côte d'Azur",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -152,7 +152,7 @@ const regionList = [
   },
   {
     name: "Réunion",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -161,7 +161,7 @@ const regionList = [
   },
   {
     name: "Mayotte",
-    politicalParty: "String",
+    politicalParty: "Divers droite",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -170,7 +170,7 @@ const regionList = [
   },
   {
     name: "Nouvelle-Calédonie",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -179,7 +179,7 @@ const regionList = [
   },
   {
     name: "Polynésie française",
-    politicalParty: "String",
+    politicalParty: "Tapura huiraatira",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -188,7 +188,7 @@ const regionList = [
   },
   {
     name: "Saint-Barthélemy",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -197,7 +197,7 @@ const regionList = [
   },
   {
     name: "Saint-Martin",
-    politicalParty: "String",
+    politicalParty: "Les Répubicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -206,7 +206,7 @@ const regionList = [
   },
   {
     name: "Saint-Pierre-et-Miquelon",
-    politicalParty: "String",
+    politicalParty: "Archipel demain",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
@@ -215,7 +215,7 @@ const regionList = [
   },
   {
     name: "Wallis-et-Futuna",
-    politicalParty: "String",
+    politicalParty: "Les Républicains",
     regionVSSBudget: 0,
     events: [],
     trainedStaff: 0,
