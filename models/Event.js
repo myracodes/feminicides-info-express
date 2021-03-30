@@ -21,29 +21,34 @@ const eventSchema = new Schema({
     required: true,
   },
   coordinates: {
-    lng: Number,
-    lat: Number,
-    required: true
+    lng: {
+      type: Number,
+      required: true,
+    },
+    lat: {
+      type: Number,
+      required: true,
+    },
   },
   relationship: {
     type: String,
     enum: ["compagnon", "ex-compagnon", "compagnon supposé", "non renseigné"],
-    default: "non-renseigné"
+    default: "non-renseigné",
   },
   killerAge: Number,
   complaint: Number,
   condemned: {
     type: String,
     enum: ["condamné", "non condamné", "en cours", "non renseigné"],
-    default: "non renseigné"
+    default: "non renseigné",
   },
   nbOtherVictims: {
     type: Number,
-    default: 0
+    default: 0,
   },
   otherVictims: {
     type: String,
-    default: "non renseigné"
+    default: "non renseigné",
   },
   description: String,
   courtDecision: [String],
@@ -55,8 +60,8 @@ const eventSchema = new Schema({
   },
   completeProfile: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 const Event = mongoose.model("Events", eventSchema);
