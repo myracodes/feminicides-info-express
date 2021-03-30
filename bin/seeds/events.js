@@ -1,9 +1,9 @@
 require("dotenv").config();
-require("../../config/dbConnection");
+require("./config/dbConnection");
 const mongoose = require("mongoose");
 
-const Events = require('../../models/Event');
-const Regions = require('../../models/Region');
+const Events = require('./models/Event');
+const Regions = require('./models/Region');
 
 const events = [{
     eventNumber: 1,
@@ -589,11 +589,18 @@ Regions.find()
 .then( () => {
   Events.create(events)
   .then((list) => {
-    console.log(list)
+    list.forEach(event => {
+      Regions.findByIdAndUpdate(event.region, { $push: { events: event._id }})
+      .then(editedRegion => {
+        console.log("Event added to the region ", editedRegion);
+      })
+      .catch(error => console.log(error));
+    })
+    console.log(list);
   })
   .catch((err) => console.log(err));
 
 })
 .catch(error => console.log(error));
  
-mongoose.connection.close()
+// mongoose.connection.close();
