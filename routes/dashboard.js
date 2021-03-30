@@ -68,10 +68,25 @@ router.get("/dashboard/details-event/:eventId", (req, res, next) => {
 });
 
 //Update event info
-router.patch("/dashboard/edit-event/:eventId", fileUploader.single('commemoration'), (req, res, next) => {
-  console.log("hello from the patch route before the findByIdAndUpdate");
-  
+router.patch("/dashboard/edit-event/:eventId", fileUploader.single('commemoration'), (req, res, next) => { 
   if (req.file && req.file.path) req.body.commemoration = req.file.path;
+
+  // console.log("req params eventID: ", req.params.eventId)
+  // console.log("req body region: ", req.body.region);
+
+  Events.findById(req.params.eventId)
+  .then(eventInfo => {
+    if (eventInfo.region._id !== req.body.region) {
+      Region.findByIdAndUpdate(eventInfo.region._id, { $pull : { events: eventInfo._id }})
+      .then(() => {
+        Region.findByIdAndUpdate(req.body.region, { $push: { events: eventInfo._id }})
+        .then(editedRegion => console.log("Event added to the region ", editedRegion))
+        .catch(error => console.log(error));
+      })
+      .catch(error => console.log(error));
+    }
+  })
+  .catch(error => console.log(error));
 
   Events.findByIdAndUpdate(req.params.eventId, req.body)
     .populate("region")
