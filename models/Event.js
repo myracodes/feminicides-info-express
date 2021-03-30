@@ -39,7 +39,7 @@ const eventSchema = new Schema({
   complaint: Number,
   condemned: {
     type: String,
-    enum: ["condamné", "non condamné", "en cours", "non renseigné"],
+    enum: ["condamné", "non condamné", "en cours", "suicide après acte", "non renseigné"],
     default: "non renseigné",
   },
   nbOtherVictims: {
