@@ -53,7 +53,10 @@ const eventSchema = new Schema({
   description: String,
   courtDecision: [String],
   pressArticles: [String],
-  commemoration: [String],
+  commemoration: {
+    type: String,
+    default: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/153803050_238212984635355_1749325389102366591_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=6e_9wCcYq88AX-hdOOp&_nc_ht=scontent-cdt1-1.xx&oh=398bf02a6d314d6a630f34e4cfe5e8f0&oe=6088FB8B",
+  },
   imageSource: String,
   region: {
     type: Schema.Types.ObjectId,
