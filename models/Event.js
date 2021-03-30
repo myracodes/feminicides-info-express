@@ -54,6 +54,7 @@ const eventSchema = new Schema({
   courtDecision: [String],
   pressArticles: [String],
   commemoration: [String],
+  imageSource: String,
   region: {
     type: Schema.Types.ObjectId,
     ref: "Regions",
