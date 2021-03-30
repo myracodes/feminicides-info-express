@@ -581,6 +581,7 @@ const events = [{
 
 Regions.find()
 .then(regionsList => {
+  
   regionsList.forEach(regions => console.log("random id: ", regionsList[Math.floor(Math.random() * Math.floor(regionsList.length))]._id))
   events.forEach(event => {
     event.region = regionsList[Math.floor(Math.random() * Math.floor(regionsList.length))]._id;
