@@ -57,6 +57,13 @@ app.use((req, res, next) => {
   next(err);
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use("*", (req, res, next) => {
+    // If no routes match, send them the React HTML.
+    res.sendFile(__dirname + "/public/index.html");
+  });
+}
+
 // Error handler middleware
 // If you pass an argument to your next function in any of your routes or middlewares
 // You will end up in this middleware
