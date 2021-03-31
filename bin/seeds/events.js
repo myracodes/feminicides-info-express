@@ -653,29 +653,17 @@ const events = [{
   }
 ];
 
-Regions.find()
-.then(regionsList => {
-  
-  regionsList.forEach(regions => console.log("random id: ", regionsList[Math.floor(Math.random() * Math.floor(regionsList.length))]._id))
-  events.forEach(event => {
-    event.region = regionsList[Math.floor(Math.random() * Math.floor(regionsList.length))]._id;
-  });
-})
-.then( () => {
-  Events.create(events)
-  .then((list) => {
-    list.forEach(event => {
-      Regions.findByIdAndUpdate(event.region, { $push: { events: event._id }})
-      .then(editedRegion => {
-        console.log("Event added to the region ", editedRegion);
-      })
-      .catch(error => console.log(error));
+Events.create(events)
+.then((list) => {
+  list.forEach(event => {
+    Regions.findByIdAndUpdate(event.region, { $push: { events: event._id }})
+    .then(editedRegion => {
+      console.log("Event added to the region ", editedRegion);
     })
-    console.log(list);
+    .catch(error => console.log(error));
   })
-  .catch((err) => console.log(err));
-
+  console.log(list);
 })
-.catch(error => console.log(error));
+.catch((err) => console.log(err));
  
 // mongoose.connection.close();
