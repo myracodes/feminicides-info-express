@@ -48,7 +48,7 @@ app.use("/api/auth", authRouter);
 app.use("/api", require('./routes/homepage')); //page d'accueil route
 app.use("/api", require('./routes/dashboard')); //tableau de bord route
 app.use("/api/data", require('./routes/data.map')); //même route pour data et map car mêmes besoins
-app.use("/api/map", require('./routes/data.map')); //
+app.use("/api/carte", require('./routes/data.map')); //
 
 // 404 Middleware
 app.use((req, res, next) => {
