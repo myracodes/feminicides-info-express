@@ -653,6 +653,7 @@ const events = [{
   }
 ];
 
+// Add a random region id to the region field since we all have different region ids in our local databases
 Regions.find()
 .then(regionsList => {
   
