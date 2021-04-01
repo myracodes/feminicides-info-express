@@ -33,7 +33,7 @@ const eventSchema = new Schema({
   relationship: {
     type: String,
     enum: ["compagnon", "ex-compagnon", "compagnon supposé", "non renseigné"],
-    default: "non-renseigné",
+    default: "non renseigné",
   },
   killerAge: Number,
   complaint: Number,
