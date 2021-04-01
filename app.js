@@ -50,19 +50,19 @@ app.use("/api", require('./routes/dashboard')); //tableau de bord route
 app.use("/api/data", require('./routes/data.map')); //même route pour data et map car mêmes besoins
 app.use("/api/carte", require('./routes/data.map')); //
 
-// 404 Middleware
-app.use((req, res, next) => {
-  const err = new Error("Ressource not found.");
-  err.status = 404;
-  next(err);
-});
-
 if (process.env.NODE_ENV === "production") {
   app.use("*", (req, res, next) => {
     // If no routes match, send them the React HTML.
     res.sendFile(__dirname + "/public/index.html");
   });
 }
+
+// 404 Middleware
+app.use((req, res, next) => {
+  const err = new Error("Ressource not found.");
+  err.status = 404;
+  next(err);
+});
 
 // Error handler middleware
 // If you pass an argument to your next function in any of your routes or middlewares
